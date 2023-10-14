@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 app.use(morgan("dev"));
 
@@ -27,4 +27,6 @@ app.use("/api/v2/anoboy/", require("./routes/anoboy-route-v2.js"));
 app.use("/api/dorama/", require("./routes/dorama-route.js"));
 
 /// Listen to certain port
-app.listen(port, () => console.log(`server running on port ${port}`));
+app.listen(port, () => {
+  console.log(`Server is running on port http://localhost:${port} 🚀`);
+});
